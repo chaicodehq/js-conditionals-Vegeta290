@@ -24,4 +24,13 @@
  */
 export function getTicketPrice(age, isWeekend) {
   // Your code here
+  if(age<0||typeof age!=="number") return -1;
+  if(typeof isWeekend!=="boolean") return -1;
+  let sum = 0;
+  if(age>=0 && age<=12) sum+=8;
+  if(age>=13 && age<=17) sum+=12;
+  if(age>=18 && age<=59) sum+=15;
+  if(age>=60) sum+=10;
+  if (isWeekend==true) sum+=3;
+  return sum;
 }
